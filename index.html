@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id='simulation'> 
+        <p>What is the best carb?:</p>
+
+        <div>
+          <input type="radio" id="huey" name="food" value="Bread"
+                 checked>
+          <label for="huey">Bread</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="dewey" name="food" value="Pasta">
+          <label for="dewey">Pasta</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="louie" name="food" value="Rice">
+          <label for="louie">Rice</label>
+        </div>
+        
+        <p>Who would win in a fight?:</p>
+
+        <div>
+          <input type="radio" id="huey" name="fight" value="Doraemon"
+                 checked>
+          <label for="huey">Doraemon</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="dewey" name="fight" value="Totoro">
+          <label for="dewey">Totoro</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="louie" name="fight" value="Anpanman">
+          <label for="louie">Anpanman</label>
+        </div>
+
+<input type="submit" value="submit"/>
+</form> 
+Result: <p id='result'></p>  
+</body>
+<script>
+var form = document.getElementById('simulation');
+var result = document.getElementById('result')
+console.log(form);
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log(e);
+    var food = form.elements['food'].value;
+    var fight = form.elements['fight'].value;
+    if(food === 'Bread' && fight === 'Totoro'){
+    result.textContent = 'Good Choice'
+    }else if (food === 'Bread' && fight === 'Doraemon'){
+        result.textContent = 'you\'re a crazy person. Reflect on your bad choice.'
+    }else if (food === 'Bread' && fight === 'Anpanman'){
+        result.textContent = 'Go home. You\'re drunk'
+    } else {
+        result.textContent = 'WFT?! You didn\'t pick bread? You monster.' 
+    }
+});
+</script>
+</html>
